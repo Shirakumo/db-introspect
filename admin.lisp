@@ -15,7 +15,7 @@
 
 (admin:define-panel database database (:access (perm radiance admin database) :icon "fa-calendar" :tooltip "Show all collections in the database")
   (r-clip:process
-   (plump:parse (template "database.ctml"))
+   (plump:parse (@template "database.ctml"))
    :collections (db:collections)))
 
 (admin:define-panel collection database (:access (perm radiance admin database) :icon "fa-table" :tooltip "View collection contents")
@@ -26,7 +26,7 @@
         (cond
           ((and (not confirm) (not (string-equal action "show")))
            (r-clip:process
-            (plump:parse (template "confirm.ctml"))
+            (plump:parse (@template "confirm.ctml"))
             :collection collection
             :action action))
           ((and confirm)
@@ -35,7 +35,7 @@
            (redirect (format NIL "/database/database")))
           (T
            (r-clip:process
-            (plump:parse (template "collection.ctml"))
+            (plump:parse (@template "collection.ctml"))
             :collection collection
             :fields (cons "_id" (mapcar #'first (db:structure collection)))
             :records (dm:get collection (db:query :all)))))
@@ -50,7 +50,7 @@
         (cond
           ((and (not confirm) (string-equal action "delete"))
            (r-clip:process
-            (plump:parse (template "confirm.ctml"))
+            (plump:parse (@template "confirm.ctml"))
             :collection collection
             :action action
             :id id))
@@ -67,7 +67,7 @@
            (redirect (format NIL "/database/collection?collection=~a&action=show" collection)))
           (T
            (r-clip:process
-            (plump:parse (template "record.ctml"))
+            (plump:parse (@template "record.ctml"))
             :collection collection
             :fields (mapcar #'first (db:structure collection))
             :record (dm:get-one collection (db:query (:= '_id id))))))
