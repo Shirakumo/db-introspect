@@ -55,6 +55,7 @@
             :action action
             :id id))
           ((and confirm (not (string-equal confirm "yes")))
+           ;; FIXME externalising
            (redirect (format NIL "/database/collection?collection=~a&action=show" collection)))
           ((string= action "Save")
            (with-model model (collection (db:query (:= '_id id)))

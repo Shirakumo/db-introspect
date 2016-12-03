@@ -28,7 +28,7 @@
       </tr>
     </tbody>
   </table>
-  <form class="table-actions" id="massEditForm" action="/database/record" method="post">
+  <form class="table-actions" id="massEditForm" @action="/database/record" method="post">
     <input type="hidden" name="collection" lquery="(val collection)" />
     <input type="submit" name="action" value="Delete" />
   </form>
