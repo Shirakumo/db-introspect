@@ -10,7 +10,7 @@
 
 (defsystem db-introspect
   :defsystem-depends-on (:radiance)
-  :class "radiance:module"
+  :class "radiance:virtual-module"
   :name "db-introspect"
   :version "0.5.1"
   :license "Artistic"
