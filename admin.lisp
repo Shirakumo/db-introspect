@@ -58,7 +58,7 @@
            ;; FIXME externalising
            (redirect (format NIL "/database/collection?collection=~a&action=show" collection)))
           ((string= action "Save")
-           (with-model model (collection (db:query (:= '_id id)))
+           (dm:with-model model (collection (db:query (:= '_id id)))
              (dolist (field (mapcar #'first (db:structure collection)))
                (setf (dm:field model field) (post-var field)))
              (dm:save model))

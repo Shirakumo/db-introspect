@@ -19,6 +19,6 @@
   :description "A simple administration interface to interact with Radiance's database."
   :serial T
   :components ((:file "admin"))
-  :depends-on ((:interface :data-model)
-               (:interface :admin)
+  :depends-on ((:interface :admin)
+               :r-data-model
                :r-clip))
