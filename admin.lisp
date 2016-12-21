@@ -18,7 +18,7 @@
    (plump:parse (@template "database.ctml"))
    :collections (db:collections)))
 
-(admin:define-panel collection database (:access (perm radiance admin database) :icon "fa-table" :tooltip "View collection contents")
+(admin:define-panel database collection (:access (perm radiance admin database) :icon "fa-table" :tooltip "View collection contents")
   (let ((collection (post/get "collection"))
         (confirm (post/get "confirm"))
         (action (post/get "action")))
@@ -41,7 +41,7 @@
             :records (dm:get collection (db:query :all)))))
         (redirect "/database/database"))))
 
-(admin:define-panel record database (:access (perm radiance admin database) :icon "fa-list-alt" :tooltip "View record contents")
+(admin:define-panel database record (:access (perm radiance admin database) :icon "fa-list-alt" :tooltip "View record contents")
   (let ((collection (post/get "collection"))
         (confirm (post/get "confirm"))
         (id (post/get "id"))
