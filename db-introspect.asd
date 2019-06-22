@@ -13,7 +13,7 @@
   :class "radiance:virtual-module"
   :name "db-introspect"
   :version "0.5.1"
-  :license "Artistic"
+  :license "zlib"
   :author "Nicolas Hafner <shinmera@tymoon.eu>"
   :maintainer "Nicolas Hafner <shinmera@tymoon.eu>"
   :description "A simple administration interface to interact with Radiance's database."
